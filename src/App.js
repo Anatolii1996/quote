@@ -8,7 +8,7 @@ function App() {
   const colors = ["red", "orange", "violet", "green", "yellow", "blue", "brown"];
 
   const changeColor = () => {
-    if (colorCount > 6) {
+    if (colorCount >= 6) {
       setColorCount(0)
     } else {
       setColorCount(colorCount + 1)
@@ -21,9 +21,9 @@ function App() {
       <div id="quote-box">
         <figure>
           <blockquote >
-            <p id="text"></p>
+            <p id="text">"{currentQuote[colorCount].quote}"</p>
           </blockquote>
-          <figcaption id="author"></figcaption>
+          <figcaption id="author">- {currentQuote[colorCount].author}</figcaption>
         </figure>
         <button id="new-quote" className={`${colors[colorCount]}`} onClick={changeColor}>New quote</button>
       </div>
