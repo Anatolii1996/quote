@@ -3,29 +3,29 @@ import { useState } from 'react';
 import { quotes } from './quotes';
 
 function App() {
-  const [colorCount, setColorCount] = useState(0);
-  const [currentQuote, setCurrentQuote] = useState(quotes);
+  const [count, setCount] = useState(0);
+  const [currentQuote] = useState(quotes);
   const colors = ["red", "orange", "violet", "green", "yellow", "blue", "brown"];
 
-  const changeColor = () => {
-    if (colorCount >= 6) {
-      setColorCount(0)
+  const changeItem = () => {
+    if (count >= 6) {
+      setCount(0)
     } else {
-      setColorCount(colorCount + 1)
+      setCount(count + 1)
     }
   }
 
   return (
-    <div className={`App ${colors[colorCount]}`}>
+    <div className={`App ${colors[count]}`}>
 
       <div id="quote-box">
         <figure>
           <blockquote >
-            <p id="text">"{currentQuote[colorCount].quote}"</p>
+            <p id="text">"{currentQuote[count].quote}"</p>
           </blockquote>
-          <figcaption id="author">- {currentQuote[colorCount].author}</figcaption>
+          <figcaption id="author">- {currentQuote[count].author}</figcaption>
         </figure>
-        <button id="new-quote" className={`${colors[colorCount]}`} onClick={changeColor}>New quote</button>
+        <button id="new-quote" className={`${colors[count]}`} onClick={changeItem}>New quote</button>
       </div>
     </div>
   );
