@@ -18,10 +18,10 @@ function App() {
     }
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     setCurrentQuote(quotes[count])
   }, [count, currentQuote])
-  
+
 
   return (
     <div className={`App ${colors[count]} transition`}>
@@ -33,11 +33,11 @@ function App() {
           </blockquote>
           <figcaption id="author" className='animate'>- {currentQuote.author}</figcaption>
         </figure>
-        <div class="footer_wrap">
+        <div className="footer_wrap">
           <a href="twitter.com/intent/tweet" id="tweet-quote" target="_blank">
-             <FaTwitterSquare className="tweet_icon" />
+            <FaTwitterSquare className="tweet_icon" />
           </a>
-         
+
           <button id="new-quote" className={`${colors[count]} transition`} onClick={changeItem}>New quote</button>
         </div>
       </div>
