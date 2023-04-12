@@ -2,6 +2,9 @@ import './App.scss';
 import { useState, useEffect } from 'react';
 import { quotes } from './quotes';
 
+import { FaTwitterSquare } from "react-icons/fa";
+
+
 function App() {
   const [count, setCount] = useState(0);
   const [currentQuote, setCurrentQuote] = useState(quotes[count]);
@@ -30,7 +33,11 @@ function App() {
           </blockquote>
           <figcaption id="author" className='animate'>- {currentQuote.author}</figcaption>
         </figure>
-        <button id="new-quote" className={`${colors[count]} transition`} onClick={changeItem}>New quote</button>
+        <div class="footer_wrap">
+          
+          <FaTwitterSquare className="tweet_icon" />
+          <button id="new-quote" className={`${colors[count]} transition`} onClick={changeItem}>New quote</button>
+        </div>
       </div>
     </div>
   );
