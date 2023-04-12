@@ -34,8 +34,10 @@ function App() {
           <figcaption id="author" className='animate'>- {currentQuote.author}</figcaption>
         </figure>
         <div class="footer_wrap">
-          
-          <FaTwitterSquare className="tweet_icon" />
+          <a href="twitter.com/intent/tweet" id="tweet-quote" target="_blank">
+             <FaTwitterSquare className="tweet_icon" />
+          </a>
+         
           <button id="new-quote" className={`${colors[count]} transition`} onClick={changeItem}>New quote</button>
         </div>
       </div>

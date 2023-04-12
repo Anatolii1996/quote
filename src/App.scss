@@ -33,12 +33,17 @@ html{
   display: flex;
   justify-content: space-between;
   margin-top: 25px;
-  .tweet_icon{
-    width: 25px;
-    height: 25px;
+  a{
+    color: inherit;
+    .tweet_icon{
+      display: inline-block;
+    width: auto;
+    height: 100%;
     cursor: pointer;
     
   }
+  }
+  
 }
 #new-quote{
   padding: 5px;
