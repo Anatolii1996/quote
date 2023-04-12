@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@400;600&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+html{
+  font-family: 'Sofia Sans Condensed', sans-serif;
 }
 .App {
   width: 100vw;
@@ -17,6 +21,7 @@
   padding:25px 50px;
   #text{
     text-align: center;
+    font-weight: 600;
   };
   #author{
     text-align: right;
@@ -30,6 +35,8 @@
   cursor: pointer;
   margin-left: 75%;
   margin-top: 25px;
+  font-family: 'Sofia Sans Condensed', sans-serif;
+  font-weight: 400;
 }
 .red {
   background-color: rgb(194, 62, 62);
