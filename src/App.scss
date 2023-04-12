@@ -59,3 +59,21 @@ html{
 .brown {
   background-color: rgb(115, 81, 12);
 }
+.transition {
+  transition: all 1s linear;
+}
+
+
+.animate {
+  animation: fadeIn 3s;
+}
+
+/* Добавьте анимацию для плавного появления текста */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,10 +1,10 @@
 import './App.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { quotes } from './quotes';
 
 function App() {
   const [count, setCount] = useState(0);
-  const [currentQuote] = useState(quotes);
+  const [currentQuote, setCurrentQuote] = useState(quotes[count]);
   const colors = ["red", "orange", "violet", "green", "yellow", "blue", "brown"];
 
   const changeItem = () => {
@@ -13,19 +13,24 @@ function App() {
     } else {
       setCount(count + 1)
     }
-  }
+  };
+
+  useEffect(()=>{
+    setCurrentQuote(quotes[count])
+  }, [count, currentQuote])
+  
 
   return (
-    <div className={`App ${colors[count]}`}>
+    <div className={`App ${colors[count]} transition`}>
 
-      <div id="quote-box">
+      <div id="quote-box" >
         <figure>
           <blockquote >
-            <p id="text">"{currentQuote[count].quote}"</p>
+            <p id="text" className='animate'>"{currentQuote.quote}"</p>
           </blockquote>
-          <figcaption id="author">- {currentQuote[count].author}</figcaption>
+          <figcaption id="author" className='animate'>- {currentQuote.author}</figcaption>
         </figure>
-        <button id="new-quote" className={`${colors[count]}`} onClick={changeItem}>New quote</button>
+        <button id="new-quote" className={`${colors[count]} transition`} onClick={changeItem}>New quote</button>
       </div>
     </div>
   );
