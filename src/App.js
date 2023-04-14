@@ -22,6 +22,19 @@ function App() {
     setCurrentQuote(quotes[count])
   }, [count, currentQuote])
 
+  const restartAnimation = () => {
+    let animate = document.querySelectorAll(".animate");
+    animate.forEach((el)=>{
+      el.style.animationName = "none";
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          el.style.animationName = ""
+        }, 0);
+      })
+    })
+   
+  }
+
 
   return (
     <div className={`App ${colors[count]} transition`}>
@@ -38,7 +51,10 @@ function App() {
             <FaTwitterSquare className="tweet_icon" />
           </a>
 
-          <button id="new-quote" className={`${colors[count]} transition`} onClick={changeItem}>New quote</button>
+          <button id="new-quote" className={`${colors[count]} transition `} onClick={() => {
+            changeItem()
+            restartAnimation()
+          }}>New quote</button>
         </div>
       </div>
     </div>
